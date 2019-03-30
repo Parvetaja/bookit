@@ -1,18 +1,19 @@
-CREATE TABLE user (
-    id   long         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE TODO (
+    id   LONG         NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name varchar(255) NOT NULL,
-    age  number       NOT NULL
+    description varchar(255) NOT NULL,
+    done boolean default false
 );
 
-INSERT INTO user (name, age)
-VALUES ('kaspar', 15);
-INSERT INTO user (name, age)
-VALUES ('ilja', 15);
-INSERT INTO user (name, age)
-VALUES ('lauri', 15);
-INSERT INTO user (name, age)
-VALUES ('mae', 15);
-INSERT INTO user (name, age)
-VALUES ('raiko', 15);
-INSERT INTO user (name, age)
-VALUES ('reiko', 15);
+INSERT INTO todo (name, description)
+VALUES ('learn spring', 'chapter one');
+INSERT INTO todo (name, description)
+VALUES ('learn spring', 'chapter two');
+INSERT INTO todo (name, description)
+VALUES ('learn spring', 'chapter three');
+INSERT INTO todo (name, description)
+VALUES ('learn spring', 'chapter four');
+INSERT INTO todo (name, description)
+VALUES ('learn spring', 'chapter five');
+INSERT INTO todo (name, description)
+VALUES ('learn spring', 'chapter six');
