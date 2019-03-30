@@ -1,7 +1,7 @@
 package ee.taltech.spring.bookit.controller;
 
-import ee.taltech.spring.bookit.domain.Todo;
-import ee.taltech.spring.bookit.service.TodoService;
+import ee.taltech.spring.bookit.domain.User;
+import ee.taltech.spring.bookit.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 @Controller
-@RequestMapping("todos")
+@RequestMapping("users")
 public class ExampleController {
 
     @Resource
-    TodoService service;
+    UserService service;
 
     @GetMapping(value = "/{id}")
-    public String getTodoById(Model model, @PathVariable Long id) {
-        Todo todo = service.getTodoById(id);
-        model.addAttribute(todo);
+    public String hello(Model model, @PathVariable Long id) {
+        User user = service.getUserById(id);
+        model.addAttribute(user);
         return "index";
     }
 
     @GetMapping(value = "api/{id}")
     @ResponseBody
-    public Todo GetTodoById(@PathVariable Long id) {
-        return service.getTodoById(id);
+    public User joukijou(@PathVariable Long id) {
+        return service.getUserById(id);
     }
 }
